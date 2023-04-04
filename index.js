@@ -75,7 +75,7 @@ const categories = [...new Set(product.map((item)=>
     }
 
     function displaycart(a) {
-        let j = 0;
+        let j = 0, total = 0;
         document.getElementById("count").innerHTML = cart.length;
 
         if(cart.length == 0) {
@@ -88,8 +88,8 @@ const categories = [...new Set(product.map((item)=>
             {
                 var {image, title, price} = items;
 
-                total=total+price;
-                document.getElementById("total").innerHTML = "$ " + total + ".00";
+                total=parseInt(total)+parseInt(price);
+                document.getElementById("total").innerHTML = "₱ " + (1000*(total)) + ".00";
                 
                 return (
                     `<div class='cart-item'>
